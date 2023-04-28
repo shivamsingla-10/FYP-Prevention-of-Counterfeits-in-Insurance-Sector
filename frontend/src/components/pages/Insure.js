@@ -1,10 +1,485 @@
 import React from 'react';
-import Image3 from '../../img/health.png';
-import Image4 from '../../img/car.png';
-import Image5 from '../../img/home.png';
-import Image6 from '../../img/fire.png';
-import Image7 from '../../img/education.png';
-import Image8 from '../../img/travel.png';
+const Web3 = require('web3');
+const web3 = new Web3('http://localhost:8545');
+
+function createDataset2() {
+  console.log('createDataset function called');
+
+  // Get form values
+  const age = parseInt(document.getElementById('age').value);
+  var sex = 0
+  if(document.getElementById('sex').value=="male"){
+    sex=1
+  };
+  const bmi = parseInt(document.getElementById('bmi').value);
+  const children = parseInt(document.getElementById('children').value);
+  var smoker = 0
+  if(document.getElementById('smoker').value=="yes"){
+    smoker=1
+  };
+  var region = 0
+  if(document.getElementById('region').value=="northwest"){
+    region=1
+  }
+  else{
+    if(document.getElementById('region').value=="southeast"){
+      region=2
+    }
+    else{
+      if(document.getElementById('region').value=="southwest"){
+        region=3
+      }
+    }
+  }
+
+  // Create a dataset object
+  const dataset = [{
+      "age": age,
+      "sex": sex,
+      "bmi": bmi,
+      "children": children,
+      "smoker":smoker,
+      "region":region
+  }];
+  console.log(dataset);
+
+  // Convert the dataset object to JSON string
+  const datasetJson = JSON.stringify(dataset);
+  var fs = require('fs'),
+    RandomForestClassifier = require('random-forest-classifier').RandomForestClassifier;
+
+// // Load CSV file
+// const csvFilePath = 'dataset.csv';
+// var data2=csvFileToJSON(csvFilePath)
+// console.log(data2)
+
+// // Parse CSV file
+// Papa.parse(csvFilePath, {
+//   header: true,
+//   download: true,
+//   complete: function(results) {
+//     // Convert CSV to JS dataset
+//     const dataset2 = results.data.map(row => ({
+//       medicationA: parseInt(row.MedicationA),
+//       medicationB: parseInt(row.MedicationB),
+//       medicationC: parseInt(row.MedicationC),
+//       medicationD: parseInt(row.MedicationD),
+//       claimAmount: parseInt(row.claimingAmount),
+//     }));
+
+//     // Do something with dataset
+//     console.log(dataset2);
+//   },
+// });
+var data=[
+  {
+    "age": 62,
+    "sex": 0,
+    "bmi": 26.29,
+    "children": 0,
+    "smoker": 1,
+    "region": 2,
+    "charges": 27808.7251
+},
+{
+    "age": 23,
+    "sex": 1,
+    "bmi": 34.4,
+    "children": 0,
+    "smoker": 0,
+    "region": 3,
+    "charges": 1826.843
+},
+{
+    "age": 56,
+    "sex": 0,
+    "bmi": 39.82,
+    "children": 0,
+    "smoker": 0,
+    "region": 2,
+    "charges": 11090.7178
+},
+{
+    "age": 27,
+    "sex": 1,
+    "bmi": 42.13,
+    "children": 0,
+    "smoker": 1,
+    "region": 2,
+    "charges": 39611.7577
+},
+{
+    "age": 19,
+    "sex": 1,
+    "bmi": 24.6,
+    "children": 1,
+    "smoker": 0,
+    "region": 3,
+    "charges": 1837.237
+},
+{
+    "age": 52,
+    "sex": 0,
+    "bmi": 30.78,
+    "children": 1,
+    "smoker": 0,
+    "region": 0,
+    "charges": 10797.3362
+},
+{
+    "age": 23,
+    "sex": 1,
+    "bmi": 23.845,
+    "children": 0,
+    "smoker": 0,
+    "region": 0,
+    "charges": 2395.17155
+},
+{
+    "age": 56,
+    "sex": 1,
+    "bmi": 40.3,
+    "children": 0,
+    "smoker": 0,
+    "region": 3,
+    "charges": 10602.385
+},
+{
+    "age": 30,
+    "sex": 1,
+    "bmi": 35.3,
+    "children": 0,
+    "smoker": 1,
+    "region": 3,
+    "charges": 36837.467
+},
+{
+    "age": 60,
+    "sex": 0,
+    "bmi": 36.005,
+    "children": 0,
+    "smoker": 0,
+    "region": 0,
+    "charges": 13228.84695
+},
+{
+    "age": 30,
+    "sex": 0,
+    "bmi": 32.4,
+    "children": 1,
+    "smoker": 0,
+    "region": 3,
+    "charges": 4149.736
+},
+{
+    "age": 18,
+    "sex": 1,
+    "bmi": 34.1,
+    "children": 0,
+    "smoker": 0,
+    "region": 2,
+    "charges": 1137.011
+},
+{
+    "age": 34,
+    "sex": 0,
+    "bmi": 31.92,
+    "children": 1,
+    "smoker": 1,
+    "region": 0,
+    "charges": 37701.8768
+},
+{
+    "age": 37,
+    "sex": 1,
+    "bmi": 28.025,
+    "children": 2,
+    "smoker": 0,
+    "region": 1,
+    "charges": 6203.90175
+},
+{
+    "age": 59,
+    "sex": 0,
+    "bmi": 27.72,
+    "children": 3,
+    "smoker": 0,
+    "region": 2,
+    "charges": 14001.1338
+},
+{
+    "age": 63,
+    "sex": 0,
+    "bmi": 23.085,
+    "children": 0,
+    "smoker": 0,
+    "region": 0,
+    "charges": 14451.83515
+},
+{
+    "age": 55,
+    "sex": 0,
+    "bmi": 32.775,
+    "children": 2,
+    "smoker": 0,
+    "region": 1,
+    "charges": 12268.63225
+},
+{
+    "age": 23,
+    "sex": 1,
+    "bmi": 17.385,
+    "children": 1,
+    "smoker": 0,
+    "region": 1,
+    "charges": 2775.19215
+},
+{
+    "age": 31,
+    "sex": 1,
+    "bmi": 36.3,
+    "children": 2,
+    "smoker": 1,
+    "region": 3,
+    "charges": 38711
+},
+{
+    "age": 22,
+    "sex": 1,
+    "bmi": 35.6,
+    "children": 0,
+    "smoker": 1,
+    "region": 3,
+    "charges": 35585.576
+},
+{
+    "age": 18,
+    "sex": 0,
+    "bmi": 26.315,
+    "children": 0,
+    "smoker": 0,
+    "region": 0,
+    "charges": 2198.18985
+},
+{
+    "age": 19,
+    "sex": 0,
+    "bmi": 28.6,
+    "children": 5,
+    "smoker": 0,
+    "region": 3,
+    "charges": 4687.797
+},
+{
+    "age": 63,
+    "sex": 1,
+    "bmi": 28.31,
+    "children": 0,
+    "smoker": 0,
+    "region": 1,
+    "charges": 13770.0979
+},
+{
+    "age": 28,
+    "sex": 1,
+    "bmi": 36.4,
+    "children": 1,
+    "smoker": 1,
+    "region": 3,
+    "charges": 51194.55914
+},
+{
+    "age": 19,
+    "sex": 1,
+    "bmi": 20.425,
+    "children": 0,
+    "smoker": 0,
+    "region": 1,
+    "charges": 1625.43375
+},
+{
+    "age": 62,
+    "sex": 0,
+    "bmi": 32.965,
+    "children": 3,
+    "smoker": 0,
+    "region": 1,
+    "charges": 15612.19335
+},
+{
+    "age": 26,
+    "sex": 1,
+    "bmi": 20.8,
+    "children": 0,
+    "smoker": 0,
+    "region": 3,
+    "charges": 2302.3
+},
+{
+    "age": 35,
+    "sex": 1,
+    "bmi": 36.67,
+    "children": 1,
+    "smoker": 1,
+    "region": 0,
+    "charges": 39774.2763
+},
+{
+    "age": 60,
+    "sex": 1,
+    "bmi": 39.9,
+    "children": 0,
+    "smoker": 1,
+    "region": 3,
+    "charges": 48173.361
+},
+{
+    "age": 24,
+    "sex": 0,
+    "bmi": 26.6,
+    "children": 0,
+    "smoker": 0,
+    "region": 0,
+    "charges": 3046.062
+}]
+
+var rf = new RandomForestClassifier({
+    n_estimators: 10
+});
+
+rf.fit(data, null, "charges", function(err, trees){
+  //console.log(JSON.stringify(trees, null, 4));
+  var pred = rf.predict(dataset, trees);
+  alert("Transaction Successful");
+  const contractAddress = "0x8f021148e212dA7Ec148a6B6912D1ED3aFE55342"; // Replace with your smart contract address
+  const contractABI = [
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "_sex",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint8",
+          "name": "_smoker",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint8",
+          "name": "_children",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint8",
+          "name": "_region",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "age",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "charges",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "bmi",
+          "type": "uint256"
+        }
+      ],
+      "name": "addRecord",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_id",
+          "type": "uint256"
+        }
+      ],
+      "name": "getRecord",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getRecordCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ] // Replace with your smart contract ABI
+
+  const contractInstance = new web3.eth.Contract(contractABI, contractAddress);
+
+  contractInstance.methods.addRecord(sex, smoker, children, region, age, Math.round(pred[0]), Math.round(bmi))
+  .send({ from: "0x83bB92448BC104489547459B58aDD459D0De724C", gas: '3000000' })
+  .then(receipt => {
+    console.log('Transaction successful:', receipt);
+  })
+  .catch(error => {
+    console.error('Failed to send transaction to smart contract:', error);
+  });
+data.unshift({"age":age,"sex":sex,"bmi":bmi,"children":children, "smoker":smoker, "region":region ,"charges":pred[0]})
+console.log(pred);
+console.log(data);
+
+}
+);
+
+  // Display the JSON string
+}
+
 
 const Insure = () => {
   return (
@@ -26,163 +501,43 @@ const Insure = () => {
               insurance plan, we also pay a proportion of your life insurance
               benefit if you contract a critical illness.
             </p>
-          </div>
-          <div className='col-md-6 col-sm-12 my-4'>
-            <div className='float-md-right'>
-              <img src={Image3} alt='' className='insureImages mt-5' />
-              <button
-                type='button'
-                className='insureBtn btn btn-lg mt-3 d-flex'
-              >
-                Choose a Plan
-              </button>
-            </div>
-          </div>
-          <div className='col-md-6 col-sm-12 my-4'>
-            <h5>Motor Insurance</h5>
-            <h3>
-              Your safety and the upkeep of your vehicle is a priority for us.
-            </h3>
-            <p>
-              Our insurance plans are designed to protect the insured for loss
-              of or damage to his or her vehicle, damage to Third Party property
-              including bodily injury and death to Third Party caused by an
-              accident whilst using their vehicle as it is a compulsory
-              insurance for every vehicle owner.
-            </p>
-          </div>
-          <div className='col-md-6 col-sm-12 my-4'>
-            <div className='float-md-right'>
-              <img src={Image4} alt='' className='insureImages mt-5' />
-              <button
-                type='button'
-                className='insureBtn btn btn-lg mt-3 d-flex'
-              >
-                Choose a Plan
-              </button>
-            </div>
-          </div>
-          <div className='col-md-6 col-sm-12 my-4'>
-            <h5>Home Insurance</h5>
-            <h3>
-              Our coverage protects the stuff you own at home and everywhere
-              else.
-            </h3>
-            <p>
-              Risks that are typically covered by a standard home insurance
-              policy include fire, theft, storm, flood and other perils. No one
-              plans on losing their home or possessions to any of these
-              unforeseen dangers. However, when that day comes, you can rely on
-              us.
-            </p>
-          </div>
-          <div className='col-md-6 col-sm-12 my-4'>
-            <div className='float-md-right'>
-              <img src={Image5} alt='' className='insureImages mt-5' />
-              <button
-                type='button'
-                className='insureBtn btn btn-lg mt-3 d-flex'
-              >
-                Choose a Plan
-              </button>
-            </div>
-          </div>
-          <div className='col-md-6 col-sm-12 my-4'>
-            <h5>Fire Insurance</h5>
-            <h3>
-              A short circuit can reduce your assets to ashes. Let’s help
-              extinguish your worries.
-            </h3>
-            <p>
-              Protect yourself and your properties from loss caused by
-              accidental fire and lightening with our Fire Insurance. We take
-              pride in providing you with our comprehensive protection backed by
-              sound financial capability. This policy protects you from
-              financial loss as a result of perils.
-            </p>
-          </div>
-          <div className='col-md-6 col-sm-12 my-4'>
-            <div className='float-md-right'>
-              <img src={Image6} alt='' className='insureImages mt-5' />
-              <button
-                type='button'
-                className='insureBtn btn btn-lg mt-3 d-flex'
-              >
-                Choose a Plan
-              </button>
-            </div>
-          </div>
-          <div className='col-md-6 col-sm-12 my-4'>
-            <h5>Study Insurance</h5>
-            <h3>
-              We are aware an investment in your child’s education pays the best
-              interest.
-            </h3>
-            <p>
-              Your children’s wellbeing and their future is precious. With our
-              education insurance cover, you can save towards financing your
-              child’s education and they continue to receive the education
-              you’ve always wanted for them even if you pass away or become
-              disabled.
-            </p>
-          </div>
-          <div className='col-md-6 col-sm-12 my-4'>
-            <div className='float-md-right'>
-              <img src={Image7} alt='' className='insureImages mt-5' />
-              <button
-                type='button'
-                className='insureBtn btn btn-lg mt-3  d-flex'
-              >
-                Choose a Plan
-              </button>
-            </div>
-          </div>
-          <div className='col-md-6 col-sm-12 my-4'>
-            <h5>Travel Insurance</h5>
-            <h3>
-              Travelling outside your place of residence? We pilot your safety.
-            </h3>
-            <p>
-              Whether you are travelling for business, pleasure or for school,
-              our travel insurance is designed to provide cover for risks
-              associated with travelling outside your country of residence, no
-              matter your travel destination, we take pride in catering your for
-              you and your valuables’ safety.
-            </p>
-          </div>
-          <div className='col-md-6 col-sm-12 my-4'>
-            <div className='float-md-right'>
-              <img src={Image8} alt='' className='insureImages mt-5' />
-              <button
-                type='button'
-                className='insureBtn btn btn-lg mt-3 d-flex'
-              >
-                Choose a Plan
-              </button>
-            </div>
+            <div className='claims mx-md-5'>
+          <div className='text-center mr-md-5 claimBtnA'>
+          <form id="myForm">
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age"></input><br></br><br></br>
+    <label for="sex">Sex:</label>
+    <select id="sex" name="cars">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <label for="bmi">BMI:</label>
+    <input type="number" id="bmi" name="bmi"></input><br></br><br></br>
+    <label for="children">Children:</label>
+    <input type="number" id="children" name="children"></input><br></br><br></br>
+    <label for="smoker">Smoker:</label>
+    <select id="smoker" name="smoker">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+    <label for="region">Region:</label>
+    <select id="region" name="region">
+      <option value="northeast">Northeast</option>
+      <option value="northwest">Northwest</option>
+      <option value="southeast">Southeast</option>
+      <option value="southwest">Southwest</option>
+    </select>
+    <input type="button" value="Submit" id="submitButton2"></input>
+  </form>
           </div>
         </div>
-        <div className='text-center mt-5'>
-          <h4 className='ml-md-5'>
-            Do you want to update or renew your
-            <br /> current plan?
-          </h4>
-          <button type='button' className='insureUpdateBtn btn btn-lg mt-3 '>
-            Update or Renew
-          </button>
-        </div>
-        <div className='text-center mt-5 mb-md-5'>
-          <h4 className='ml-md-5'>
-            Do you know our products are
-            <br /> customisable?
-          </h4>
-          <button type='button' className='insureContactBtn btn btn-lg mt-3  '>
-            Contact Us
-          </button>
+          </div>
         </div>
       </div>
     </section>
   );
 };
-
+document.addEventListener('DOMContentLoaded', function() {
+  // Add event listener to the submit button
+  document.getElementById('submitButton2').addEventListener('click', createDataset2);});
 export default Insure;
