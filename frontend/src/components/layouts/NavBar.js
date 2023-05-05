@@ -16,11 +16,7 @@ const NavBar = ({ logoutUser, auth, clearCurrentUser }) => {
 
   const guestLinks = (
     <Fragment>
-      <li className='nav-item mr-4'>
-        <Link className='nav-link text-dark' to='#'>
-          +234-000-500-606
-        </Link>
-      </li>
+      
       <li className='nav-item mr-4'>
         <Link className='nav-link text-dark' to='/signin'>
           Sign in
@@ -36,11 +32,7 @@ const NavBar = ({ logoutUser, auth, clearCurrentUser }) => {
 
   const authLinks = (
     <Fragment>
-      <li className='nav-item mr-4'>
-        <Link className='nav-link text-dark' to='#'>
-          +234-000-500-606
-        </Link>
-      </li>
+      
       <li className='nav-item mr-4'>
         <Link className='nav-link text-dark' to='/dashboard'>
           My Account
