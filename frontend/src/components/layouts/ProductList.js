@@ -1,11 +1,7 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import CrossIcon from '../../icons/crossIcon';
-import CarIcon from '../../icons/carIcon';
-import HouseIcon from '../../icons/houseIcon';
-import FireIcon from '../../icons/fireIcon';
-import BookIcon from '../../icons/bookIcon';
-import AirplaneIcon from '../../icons/airplaneIcon';
+
 import Image1 from '../../img/Illustration.png';
 import Image2 from '../../img/Group_615.png';
 import Landing from './Landing';
@@ -36,64 +32,11 @@ const ProductList = () => {
                 Quote
               </Link>
             </div>
-            <div className=' text-center productCard col-md-3 '>
-              <CarIcon />
-              <h3 className='contentHeader'>
-                Motor <br /> Insurance
-              </h3>
-              <p className='startingFrom'>Starting from</p>
-              <h4 className='month'>$3/month</h4>
-              <Link className='buy btn btn-lg btn-block ' to='/insure'>
-                Quote
-              </Link>
-            </div>
-            <div className=' text-center productCard col-md-3 '>
-              <HouseIcon />
-              <h3 className='contentHeader'>
-                Home <br /> Insurance
-              </h3>
-              <p className='startingFrom'>Starting from</p>
-              <h4 className='month'>$10/month</h4>
-              <Link className='buy btn btn-lg btn-block ' to='/insure'>
-                Quote
-              </Link>
-            </div>
-          </div>
+            
 
-          <div className='row productList '>
-            <div className=' text-center productCard col-md-3'>
-              <FireIcon />
-              <h3 className='contentHeader '>
-                Fire <br /> Insurance
-              </h3>
-              <p className='startingFrom '>Starting from</p>
-              <h4 className='month '>$15/month</h4>
-              <Link className='buy btn btn-lg btn-block ' to='/insure'>
-                Quote
-              </Link>
-            </div>
-            <div className=' text-center productCard col-md-3'>
-              <BookIcon />
-              <h3 className='contentHeader'>
-                Study <br /> Insurance
-              </h3>
-              <p className='startingFrom'>Starting from</p>
-              <h4 className='month'>$10/month</h4>
-              <Link className='buy btn btn-lg btn-block ' to='/insure'>
-                Quote
-              </Link>
-            </div>
-            <div className=' text-center productCard col-md-3'>
-              <AirplaneIcon />
-              <h3 className='contentHeader'>
-                Travel <br /> Insurance
-              </h3>
-              <p className='startingFrom'>Starting from</p>
-              <h4 className='month'>$30/trip</h4>
-              <Link className='buy btn btn-lg btn-block ' to='/insure'>
-                Quote
-              </Link>
-            </div>
+          
+            
+            
           </div>
         </div>
       </section>
