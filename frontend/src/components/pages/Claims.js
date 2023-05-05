@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import image from '../../img/Repeat_Grid_5.png';
 import image1 from '../../img/Icon_feather-check-circle.png';
 import image2 from '../../img/Icon_feather-clock.png';
-// import Papa from 'papaparse';
 
 const Web3 = require('web3');
 const web3 = new Web3('http://localhost:8545');
@@ -12,11 +11,11 @@ function createDataset() {
   console.log('createDataset function called');
 
   // Get form values
-  const medA = parseInt(document.getElementById('medA').value);
-  const medB = parseInt(document.getElementById('medB').value);
-  const medC = parseInt(document.getElementById('medC').value);
-  const medD = parseInt(document.getElementById('medD').value);
-  const claimAmount = parseInt(document.getElementById('claimAmount').value);
+  const medA = document.getElementById('medA').value;
+  const medB = document.getElementById('medB').value;
+  const medC = document.getElementById('medC').value;
+  const medD = document.getElementById('medD').value;
+  const claimAmount = document.getElementById('claimAmount').value;
 
   // Create a dataset object
   const dataset = [{
@@ -32,29 +31,6 @@ function createDataset() {
   var fs = require('fs'),
     RandomForestClassifier = require('random-forest-classifier').RandomForestClassifier;
 
-// // Load CSV file
-// const csvFilePath = 'dataset.csv';
-// var data2=csvFileToJSON(csvFilePath)
-// console.log(data2)
-
-// // Parse CSV file
-// Papa.parse(csvFilePath, {
-//   header: true,
-//   download: true,
-//   complete: function(results) {
-//     // Convert CSV to JS dataset
-//     const dataset2 = results.data.map(row => ({
-//       medicationA: parseInt(row.MedicationA),
-//       medicationB: parseInt(row.MedicationB),
-//       medicationC: parseInt(row.MedicationC),
-//       medicationD: parseInt(row.MedicationD),
-//       claimAmount: parseInt(row.claimingAmount),
-//     }));
-
-//     // Do something with dataset
-//     console.log(dataset2);
-//   },
-// });
 var data=[
     {
         "Medication A": 0,
@@ -220,7 +196,7 @@ rf.fit(data, null, "Insurance claiming amount", function(err, trees){
   var pred = rf.predict(dataset, trees);
   if(pred[0]>=claimAmount){
     alert("Transaction Successful");
-    const contractAddress = "0xA3B4E0CBaF5113CCd5D464B56c80439A915740cf"; // Replace with your smart contract address
+    const contractAddress = "0x244D32d32ca3bD0f746A356FDD1C8591449B655C"; // Replace with your smart contract address
     const contractABI = [
       {
         "inputs": [
@@ -322,7 +298,7 @@ rf.fit(data, null, "Insurance claiming amount", function(err, trees){
     const contractInstance = new web3.eth.Contract(contractABI, contractAddress);
 
     contractInstance.methods.addRecord(medA, medB, medC, medD, claimAmount, pred[0])
-    .send({ from: "0x83bB92448BC104489547459B58aDD459D0De724C", gas: '3000000' })
+    .send({ from: "0x5dFAE6Ddf52f4D2cEDB8018641dF5814f4eb3e29", gas: '3000000' })
     .then(receipt => {
       console.log('Transaction successful:', receipt);
     })
@@ -333,9 +309,8 @@ rf.fit(data, null, "Insurance claiming amount", function(err, trees){
     else{
       alert("Transaction Unsuccessful")
     }
-  data.unshift({"Medication A":medA,"Medication B":medB,"Medication C":medC,"Medication D":medD, "Insurance claiming amount":claimAmount})
+
   console.log(pred);
-  console.log(data);
 
   // pred = ["virginia, "setosa"]
 });
@@ -346,7 +321,7 @@ rf.fit(data, null, "Insurance claiming amount", function(err, trees){
 const Claims = () => {
   return (
     <section className=' container-fliud claimsPage '>
-      <div className=' mt-5'>
+      <div className=' claim1 mt-5' >
         <h1 className='motto text-center '>
           You need not face the impending alone
         </h1>
@@ -356,52 +331,26 @@ const Claims = () => {
           File for a claim and blink, we’re there.
         </p>
         <div className='claims mx-md-5'>
-          <div className='text-center mr-md-5 claimBtnA'>
+         <div className = 'text-center'>
+          <div className = "claim2">
           <form id="myForm">
     <label for="medA">Medication A:</label>
-    <input type="number" id="medA" name="medA"></input><br></br><br></br>
+    <input class = "cl" type="number" id="medA" name="medA"></input><br></br><br></br>
     <label for="medB">Medication B:</label>
-    <input type="number" id="medB" name="medB"></input><br></br><br></br>
+    <input class = "cl" type="number" id="medB" name="medB"></input><br></br><br></br>
     <label for="medC">Medication C:</label>
-    <input type="number" id="medC" name="medC"></input><br></br><br></br>
+    <input class = "cl" type="number" id="medC" name="medC"></input><br></br><br></br>
     <label for="medD">Medication D:</label>
-    <input type="number" id="medD" name="medD"></input><br></br><br></br>
-    <label for="claimAmount">Claim Amount:</label>
-    <input type="number" id="claimAmount" name="claimAmount"></input><br></br><br></br>
+    <input class = "cl" type="number" id="medD" name="medD"></input><br></br><br></br>
+    <label  for="claimAmount">Claim Amount:</label>
+    <input class = "cl" type="number" id="claimAmount" name="claimAmount"></input><br></br><br></br>
     <input type="button" value="Submit" id="submitButton"></input>
   </form>
           </div>
         </div>
-        <div className='text-center mr-md-5 claimBtnB'>
-          <Link className='claimsBtn btn btn-lg  px-5 ' to='/claims'>
-            Fill Claim Form
-          </Link>
         </div>
-        <div className='container text-center mt-5'>
-          <div className='row '>
-            <div className='col-md-4 '>
-              <img src={image1} className='w-10' alt='' />
-              <h1 className='claimStats'>3sec</h1>
-              <p className='claimP'>World record claim handling</p>
-            </div>
-            <div className='col-md-4'>
-              <img src={image} className='w-50 mt-md-3 mb-md-4' alt='' />
-              <h1 className='claimStats'>+4.9</h1>
-              <p className='claimP'>Claims rating online</p>
-            </div>
-            <div className='col-md-4 '>
-              <img src={image2} className='w-10 ' alt='' />
-              <h1 className='claimStats'>50%</h1>
-              <p className='claimP'>Of claims handled instantly</p>
-            </div>
-          </div>
-          <div className='text-center mt-3 mb-5 '>
-            <Link className='claimsBtn btn btn-lg  px-5' to='/claims'>
-              Fill Claim Form
-            </Link>
-          </div>
         </div>
-      </div>
+     
     </section>
   );
 };
