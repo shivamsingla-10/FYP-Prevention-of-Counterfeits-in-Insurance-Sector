@@ -30,16 +30,8 @@ const Footer = () => {
           />
         </div>
       </div>
-      <div className='footerSide'>Ai</div>
-      <div className='footerBody'>
-        Insurance provided by Alles Insurance Company, 5 Ridgeway St. 3rd floor,
-        Lekki, Lagos State, Nigeria. <br className='break' /> Alles Insurance
-        Agency (AIA) is acting as the agent of Alles Insurance Company in
-        selling this insurance policy. It receives compensation based on the
-        premiums for the insurance
-        <br className='break' />
-        policies it sells. Further information is available upon request.
-      </div>
+      <div className='footerSide'>IC</div>
+     
     </section>
   );
 };
