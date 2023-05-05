@@ -1,6 +1,8 @@
 import React from 'react';
 const Web3 = require('web3');
-const web3 = new Web3('http://localhost:8545');
+const web3 = new Web3('http://localhost:3000');
+
+
 
 function createDataset2() {
   console.log('createDataset function called');
@@ -483,58 +485,53 @@ console.log(data);
 
 const Insure = () => {
   return (
-    <section className='insure mt-4'>
+    <div className='insure mt-4'>
+    
       <h1 className='text-center mt-5 mb-5'>
         Smart step to security,
         <br />
         better step to reliability
       </h1>
-      <div className='container mt-5'>
-        <div className='row  '>
-          <div className='col-md-6 col-sm-12 my-4'>
-            <h5>Life & Health Insurance</h5>
-            <h3>We are there for you and your loved ones in times of need.</h3>
-            <p>
-              Take out a life insurance plan and we will pay your family or
-              loved ones an agreed amount – your “life benefit” – if you pass
-              away or become permanently disabled. Depending on your life
-              insurance plan, we also pay a proportion of your life insurance
-              benefit if you contract a critical illness.
-            </p>
-            <div className='claims mx-md-5'>
-          <div className='text-center mr-md-5 claimBtnA'>
+     
+       
+          
+            
+      <div className='claim '> 
+            <div class="register">
+            <div class="register1">
           <form id="myForm">
-    <label for="age">Age:</label>
-    <input type="number" id="age" name="age"></input><br></br><br></br>
-    <label for="sex">Sex:</label>
-    <select id="sex" name="cars">
+    <label for="age">Age: </label>
+    <input class = "insure2" type="number" id="age" name="age"></input><p></p>
+    <label  for="sex">Sex: </label>
+    <select width = "100px" class = "insure2" id="sex" name="cars">
       <option value="male">Male</option>
       <option value="female">Female</option>
-    </select>
-    <label for="bmi">BMI:</label>
-    <input type="number" id="bmi" name="bmi"></input><br></br><br></br>
-    <label for="children">Children:</label>
-    <input type="number" id="children" name="children"></input><br></br><br></br>
-    <label for="smoker">Smoker:</label>
-    <select id="smoker" name="smoker">
+    </select><p></p>
+    <label  for="bmi">BMI: </label>
+    <input class = "insure2" type="number" id="bmi" name="bmi"></input><p></p>
+    <label for="children">Children: </label>
+    <input class = "insure1" type="number" id="children" name="children"></input><p></p>
+    <label for="smoker">Smoker: </label>
+    <select class = "insure3" id="smoker" name="smoker">
       <option value="yes">Yes</option>
       <option value="no">No</option>
-    </select>
-    <label for="region">Region:</label>
-    <select id="region" name="region">
+    </select><p></p>
+    <label for="region">Region: </label>
+    <select class = "insure3"id="region" name="region">
       <option value="northeast">Northeast</option>
       <option value="northwest">Northwest</option>
       <option value="southeast">Southeast</option>
       <option value="southwest">Southwest</option>
-    </select>
-    <input type="button" value="Submit" id="submitButton2"></input>
+    </select><p></p>
+    <input type="button" value="Submit" id="submitButton2" color="red"></input>
+    <input type="reset" name="cancel" color="red" value="Cancel"/>
   </form>
+          </div></div>
+       
           </div>
-        </div>
-          </div>
-        </div>
-      </div>
-    </section>
+       
+
+    </div>
   );
 };
 document.addEventListener('DOMContentLoaded', function() {
