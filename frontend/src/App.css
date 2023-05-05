@@ -10,7 +10,7 @@
 .landing {
   width: 100%;
   height: 80vh;
-  background-image: url('../src/img/Group_605 (1).png');
+  background-image: url('../src/img/GettyImages-1257144716.png');
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -33,13 +33,22 @@ nav {
   line-height: 1.82;
   letter-spacing: normal;
   text-align: left;
-  color: #10d6de !important;
+  color: #230240 !important;
 }
 
 .Ai {
   display: none;
 }
+.claim1 {
+  background-image: url('../src/img/1aee5c344846f449350feae457ea350e.jpg');
+  background-repeat: no-repeat;
+  background-position: center ;
+  background-position: top 20px ;
+  
+
+}
 .motto,
+
 .productHeader,
 .infoHeader {
   font-family: 'Gilroy' !important;
@@ -171,6 +180,12 @@ nav {
   color: #ffffff;
 }
 
+.insure {
+  background-image: url('../src/img/Group_608 (1).png');
+  
+  
+}
+
 .insure h5 {
   font-weight: bold;
   margin-bottom: 20px;
@@ -228,15 +243,67 @@ nav {
   float: right;
 }
 
-.claims {
+.claim {
   width: 100%;
   height: 80vh;
-  background-image: url('../src/img/Group_608 (1).png');
+  
   background-size: 100%;
   background-repeat: no-repeat;
 }
-.claimBtnA {
-  display: block;
+
+.claims {
+  
+  width: 100%;
+  height: 80vh;
+   margin-top: 10%;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: 50px right; 
+
+}
+/* .register select[class = "insure1"]{
+  height: 49px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 20px;
+} */
+/* .claim2{
+  width: 550px;
+  height: 500px;
+  
+  background: #61848f;
+  color: #000;
+
+  top: 70%;
+  left: 50%;
+
+  position: absolute;
+  transform: translate(-50%,-50%);
+  box-sizing: border-box;
+  border-radius: 10px;;
+  box-shadow: 5px 5px 5px 5px #888888;
+
+} */
+.claim2 input[class = "cl"]{
+
+  height: 30px;
+  width: 150px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 25px;
+  padding-left: 50px;
+ 
+}
+.claim2 input[type="button"]
+{
+  width: 150px;
+  height: 49px;
+  margin-left: 50px;
+  margin-right: 50px;
+  color: #0b5a72;
+  border-radius: 10px;
+  border: 3px solid #044450;
+  
 }
 .claimsBtn {
   color: #ffffff;
@@ -249,6 +316,9 @@ nav {
   background-color: #10de9f;
 }
 
+.claimBtnA {
+  display: block;
+}
 .claimBtnB {
   display: none;
 }
@@ -368,6 +438,31 @@ nav {
   letter-spacing: normal;
   text-align: left;
 }
+
+.register1 {
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+
+.register{
+  width: 550px;
+  height: 500px;
+  
+  background: #61848f;
+  color: #000;
+
+  top: 70%;
+  left: 50%;
+
+  position: absolute;
+  transform: translate(-50%,-50%);
+  box-sizing: border-box;
+  border-radius: 10px;;
+  box-shadow: 5px 5px 5px 5px #888888;
+
+}
+
 .editBtn {
   width: 158px;
   height: 36px;
@@ -511,6 +606,7 @@ nav {
   border: solid 0.5px #141414;
 }
 
+
 .fakeLabel {
   display: none;
 }
@@ -543,7 +639,8 @@ nav {
     'side head'
     'side body';
   width: 100%;
-  height: 190px;
+  height: 150px;
+  
   color: #ffffff;
   background-color: #141414;
 }
@@ -577,6 +674,73 @@ nav {
   color: #10d6de;
 }
 
+
+.register input[type="button"]
+{
+  width: 150px;
+  height: 49px;
+  margin-left: 50px;
+  margin-right: 50px;
+  color: #10de9f;
+  border-radius: 10px;
+  border: 3px solid #10de9f;
+  
+}
+
+.register select[class = "insure1"]{
+  height: 49px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 20px;
+}
+.register select[class = "insure2"]{
+  height: 49px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 55px;
+}
+.register select {
+ width : 180px;
+}
+.register input[class="insure3"]
+{
+  height: 49px;
+  width: 50px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 25px;
+}
+.register select[class = "insure3"]{
+  height: 49px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 28px;
+}
+.register input[class="insure2"]
+{
+  height: 49px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 55px;
+}
+
+.register input[class="insure1"]
+{
+  height: 49px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 20px;
+}
+
+.register input[type="reset"]
+{
+  width: 150px;
+  height: 49px;
+  margin-left: 30px;
+  color: #10de9f;
+  border-radius: 10px;
+  border: 3px solid #10de9f;
+}
 .footerBody {
   grid-area: body;
   /* width: 820px;
@@ -623,14 +787,7 @@ nav {
     background-repeat: no-repeat;
     background-position: bottom;
   }
-  .claims {
-    width: 100%;
-    height: 30vh;
-
-    background-size: cover;
-    background-repeat: no-repeat;
-    /* background-position: bottom; */
-  }
+  
   .claimsBtn {
     font-weight: bold;
     font-size: 15px;
