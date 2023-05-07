@@ -500,29 +500,29 @@ const Insure = () => {
             <div class="register">
             <div class="register1">
           <form id="myForm">
-    <label for="age">Age: </label>
-    <input class = "insure2" type="number" id="age" name="age"></input><p></p>
+    <label for="ag">Age: </label>
+    <input class = "insure2" type="number" id="age" name="age"></input><p></p><br></br>
     <label  for="sex">Sex: </label>
     <select width = "100px" class = "insure2" id="sex" name="cars">
       <option value="male">Male</option>
       <option value="female">Female</option>
-    </select><p></p>
+    </select><p></p><br></br>
     <label  for="bmi">BMI: </label>
-    <input class = "insure2" type="number" id="bmi" name="bmi"></input><p></p>
+    <input class = "insure2" type="number" id="bmi" name="bmi"></input><p></p><br></br>
     <label for="children">Children: </label>
-    <input class = "insure1" type="number" id="children" name="children"></input><p></p>
+    <input class = "insure1" type="number" id="children" name="children"></input><p></p><br></br>
     <label for="smoker">Smoker: </label>
     <select class = "insure3" id="smoker" name="smoker">
       <option value="yes">Yes</option>
       <option value="no">No</option>
-    </select><p></p>
+    </select><p></p><br></br>
     <label for="region">Region: </label>
     <select class = "insure3"id="region" name="region">
       <option value="northeast">Northeast</option>
       <option value="northwest">Northwest</option>
       <option value="southeast">Southeast</option>
       <option value="southwest">Southwest</option>
-    </select><p></p>
+    </select><p></p><br></br>
     <input type="button" value="Submit" id="submitButton2" color="red"></input>
     <input type="reset" name="cancel" color="red" value="Cancel"/>
   </form>
@@ -534,7 +534,8 @@ const Insure = () => {
     </div>
   );
 };
-document.addEventListener('DOMContentLoaded', function() {
-  // Add event listener to the submit button
-  document.getElementById('submitButton2').addEventListener('click', createDataset2);});
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   // Add event listener to the submit button
+//   document.getElementById('submitButton2').addEventListener('click', createDataset2);});
 export default Insure;
