@@ -7,6 +7,31 @@
   src: url('./font/Pacifico.otf');
 }
 
+
+
+
+
+
+/* .claims {
+  margin: 0 auto;
+  max-width: 500px;
+} */
+
+#submitButton {
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+
+
 .landing {
   width: 100%;
   height: 80vh;
@@ -39,14 +64,14 @@ nav {
 .Ai {
   display: none;
 }
-.claim1 {
+/* .claim1 {
   background-image: url('../src/img/1aee5c344846f449350feae457ea350e.jpg');
   background-repeat: no-repeat;
   background-position: center ;
   background-position: top 20px ;
   
 
-}
+} */
 .motto,
 
 .productHeader,
@@ -251,16 +276,7 @@ nav {
   background-repeat: no-repeat;
 }
 
-.claims {
-  
-  width: 100%;
-  height: 80vh;
-   margin-top: 10%;
-  background-size: 80%;
-  background-repeat: no-repeat;
-  background-position: 50px right; 
-
-}
+ 
 /* .register select[class = "insure1"]{
   height: 49px;
   border-radius: 10px;
@@ -442,18 +458,40 @@ nav {
 .register1 {
   margin-left: 30px;
   margin-top: 20px;
+  margin-bottom: 50px;
 }
 
 
 .register{
-  width: 550px;
-  height: 500px;
+  width: 700px;
+  height: 700px;
+  margin-top: 50px;
   
   background: #61848f;
   color: #000;
 
   top: 70%;
   left: 50%;
+
+  position: absolute;
+  transform: translate(-50%,-50%);
+  box-sizing: border-box;
+  border-radius: 10px;;
+  box-shadow: 5px 5px 5px 5px #888888;
+
+}
+
+.register2{
+  width: 750px;
+  height: 720px;
+  
+  background: #61848f;
+  color: #000;
+
+  top: 70%;
+  left: 50%;
+  margin-bottom: 50px;
+  margin-top: 5px;
 
   position: absolute;
   transform: translate(-50%,-50%);
@@ -640,6 +678,7 @@ nav {
     'side body';
   width: 100%;
   height: 150px;
+  margin-top: 120px;
   
   color: #ffffff;
   background-color: #141414;
@@ -654,6 +693,7 @@ nav {
 /* .getOurApp {
   float: right;
 } */
+
 .footerSide {
   grid-area: side;
   display: flex;
@@ -687,14 +727,49 @@ nav {
   
 }
 
+
+.register2 input[type="button"]
+{
+  width: 180px;
+  height: 40px;
+  margin-top: 5px;
+  margin-left: 280px;
+  margin-right: 50px;
+  color: #10de9f;
+  border-radius: 10px;
+  border: 3px solid #10de9f;
+  
+}
 .register select[class = "insure1"]{
   height: 49px;
+  width: 290px;
   border-radius: 10px;
   border: solid 0.5px #141414;
   margin-left: 20px;
 }
+
+.register2 select[class = "cl"]{
+  height: 49px;
+  width: 290px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 20px;
+}
+.register2 select[id="physician"]{
+  height: 30px;
+  width: 150px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 22px;
+  margin-top: 25px;
+}
+
+
+
+
 .register select[class = "insure2"]{
   height: 49px;
+  width: 290px;
   border-radius: 10px;
   border: solid 0.5px #141414;
   margin-left: 55px;
@@ -710,8 +785,91 @@ nav {
   border: solid 0.5px #141414;
   margin-left: 25px;
 }
+
+.register2 input[class="cl"]
+{
+  height: 30px;
+  width: 150px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 25px;
+}
+.register2 input[id="age"]
+{
+  height: 30px;
+  width: 150px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 59px;
+}
+
+label[for="age"] {
+  
+  margin-left: 120px;
+}
+
+
+label[for="p"] {
+  
+  margin-left: 120px;
+}
+.register2 input[id="claimAmount"]
+{
+  height: 30px;
+  width: 150px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 50px;
+}
+
+.register2 input[id="beneficiaryId"]
+{
+  height: 30px;
+  width: 150px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 54px;
+}
+
+.register2 input[id="ipAnnualReimbursementAmt"]
+{
+  height: 30px;
+  width: 150px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 38px;
+}
+.register2 input[id="ipAnnualDeductibleAmt" ]
+{
+  height: 30px;
+  width: 150px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 70px;
+}
+.register2 input[id="opAnnualDeductibleAmt"]
+{
+  height: 30px;
+  width: 150px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 59px;
+}
+.register2 input[id="opAnnualReimbursementAmt"]
+{
+  height: 30px;
+  width: 150px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 27px;
+}
+
+
+
+
 .register select[class = "insure3"]{
   height: 49px;
+  width: 290px;
   border-radius: 10px;
   border: solid 0.5px #141414;
   margin-left: 28px;
@@ -719,6 +877,7 @@ nav {
 .register input[class="insure2"]
 {
   height: 49px;
+  width: 290px;
   border-radius: 10px;
   border: solid 0.5px #141414;
   margin-left: 55px;
@@ -727,6 +886,7 @@ nav {
 .register input[class="insure1"]
 {
   height: 49px;
+  width: 290px;
   border-radius: 10px;
   border: solid 0.5px #141414;
   margin-left: 20px;
@@ -1057,6 +1217,7 @@ nav {
   .footerBody {
     margin: 10px 10px 0 10px;
     font-size: 10px;
+   
     font-weight: normal;
   }
 
@@ -1067,4 +1228,8 @@ nav {
     margin-top: 13px;
     width: 60px !important;
   }
+
+
+
+  
 }
