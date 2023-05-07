@@ -320,8 +320,8 @@ rf.fit(data, null, "Insurance claiming amount", function(err, trees){
 
 const Claims = () => {
   return (
-    <section className=' container-fliud claimsPage '>
-      <div className=' claim1 mt-5' >
+
+      <div className='insure '>
         <h1 className='motto text-center '>
           You need not face the impending alone
         </h1>
@@ -330,10 +330,44 @@ const Claims = () => {
           <br />
           File for a claim and blink, we’re there.
         </p>
-        <div className='claims mx-md-5'>
-         <div className = 'text-center'>
-          <div className = "claim2">
+        
+        <div className='claim '> 
+            <div class="register2">
+            <div class="register1">
+            
           <form id="myForm">
+          <label for="beneficiaryId">Beneficiary ID:</label>
+          <input class ="cl" type="text" id="beneficiaryId" />
+          <label class="cl" for="age"> Age:</label>
+          <input type="number" id="age" class="cl" /><br></br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {/* <input type="number" id="age" value={age} onChange={event => setAge(event.target.value)} />
     <label for="medA">Medication A:</label>
     <input class = "cl" type="number" id="medA" name="medA"></input><br></br><br></br>
     <label for="medB">Medication B:</label>
@@ -341,21 +375,55 @@ const Claims = () => {
     <label for="medC">Medication C:</label>
     <input class = "cl" type="number" id="medC" name="medC"></input><br></br><br></br>
     <label for="medD">Medication D:</label>
-    <input class = "cl" type="number" id="medD" name="medD"></input><br></br><br></br>
+    <input class = "cl" type="number" id="medD" name="medD"></input><br></br><br></br> */}
     <label  for="claimAmount">Claim Amount:</label>
-    <input class = "cl" type="number" id="claimAmount" name="claimAmount"></input><br></br><br></br>
+    <input class = "cl" type="number" id="claimAmount" name="claimAmount"></input>
+    <label  for="p">Physician: </label>
+    <select  class = "insure2" id="physician" >
+      <option value="PHY405682">PHY405682</option>
+      <option value="PHY383007">PHY383007</option>
+    </select><p></p>
+    <label for="admittedDays">Admitted for days:</label>
+      <input type="number" id="admittedDays" class ="cl"/><br></br>
+      <label>Select Diseases:</label><br></br>
+      <label><input type="checkbox" id="renalDisease"  /> RenalDisease </label><br></br>
+      <label><input type="checkbox" id="alzheimer"  /> alzheimer </label><br></br>
+      <label><input type="checkbox" id="HeartFail"  /> HeartFail </label><br></br>
+      <label><input type="checkbox" id="kidneyDisease"  /> kidneyDisease </label><br></br>
+      <label><input type="checkbox" id="cancer"  /> cancer </label><br></br>
+      <label><input type="checkbox" id="Pulmonary"  /> Pulmonary </label><br></br>
+      <label><input type="checkbox" id="stroke"  /> stroke </label><br></br>
+      <label><input type="checkbox" id="osteoporosis"  /> osteoporosis </label><br></br>
+      <label><input type="checkbox" id="ischemicHeart"  /> ischemicHeart </label><br></br>
+      <label><input type="checkbox" id="diabetes"  /> diabetes </label><br></br>
+      <label for="ipAnnualReimbursementAmt"> IpAnnualReimbursementAmt:</label>
+      <input type="number" id="ipAnnualReimbursementAmt" class="cl"/><br></br>
+      <label for="ipAnnualDeductibleAmt"> IpAnnualDeductibleAmt:</label>
+      <input type="number" id="ipAnnualDeductibleAmt" class="cl"/><br></br>
+      <label htmlFor="opAnnualReimbursementAmt"> OpAnnualReimbursementAmt:</label>
+      <input type="number" id="opAnnualReimbursementAmt" class="cl"/><br></br>
+      <label htmlFor="opAnnualDeductibleAmt"> OpAnnualDeductibleAmt:</label>
+      <input type="number" id="opAnnualDeductibleAmt" class="cl"/><br></br>
+
+
+
+
+
+
+
+
     <input type="button" value="Submit" id="submitButton"></input>
-  </form>
+  </form><p></p>
           </div>
         </div>
+        <p></p><br></br>
         </div>
+        
         </div>
-     
-    </section>
+
   );
 };
-document.addEventListener('DOMContentLoaded', function() {
-  // Add event listener to the submit button
-  document.getElementById('submitButton').addEventListener('click', createDataset);});
+// document.addEventListener('DOMContentLoaded', function() {
+//   // Add event listener to the submit button
+//   document.getElementById('submitButton').addEventListener('click', createDataset);});
 export default Claims;
-
