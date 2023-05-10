@@ -464,7 +464,7 @@ nav {
 
 .register{
   width: 700px;
-  height: 700px;
+  height: 710px;
   margin-top: 50px;
   
   background: #61848f;
@@ -717,9 +717,10 @@ nav {
 
 .register input[type="button"]
 {
-  width: 150px;
-  height: 49px;
-  margin-left: 50px;
+  width: 90px;
+  height: 35px;
+  
+  margin-left: 120px;
   margin-right: 50px;
   color: #10de9f;
   border-radius: 10px;
@@ -763,19 +764,103 @@ nav {
   margin-left: 22px;
   margin-top: 25px;
 }
+.register2 select[id="physician1"]{
+  height: 30px;
+  width: 50px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 59px;
+  margin-top: 25px;
+}
+
+.register2 select[id="physician01"]{
+  height: 30px;
+  width: 50px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 33px;
+  margin-top: 25px;
+}
+.register2 select[id="physician2"]{
+  height: 30px;
+  width: 50px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 63px;
+  margin-top: 25px;
+}
+.register2 select[id="physician3"]{
+  height: 30px;
+  width: 50px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 25px;
+  margin-top: 25px;
+}
+
+.register2 select[id="physician4"]{
+  height: 30px;
+  width: 50px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 77px;
+  margin-top: 25px;
+}
+
+.register2 select[id="physician5"]{
+  height: 30px;
+  width: 50px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 52px;
+  margin-top: 25px;
+}
+.register2 select[id="physician7"]{
+  height: 30px;
+  width: 50px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 84px;
+  margin-top: 25px;
+}
+.register2 select[id="physician8"]{
+  height: 30px;
+  width: 50px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 37px;
+  margin-top: 25px;
+}
+.register2 select[id="physician9"]{
+  height: 30px;
+  width: 50px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 22px;
+  margin-top: 25px;
+}
+
+.register2 select[id="physician10"]{
+  height: 30px;
+  width: 50px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 68px;
+  margin-top: 25px;
+}
 
 
 
 
 .register select[class = "insure2"]{
-  height: 49px;
-  width: 290px;
+  height: 30px;
+  width: 75px;
   border-radius: 10px;
   border: solid 0.5px #141414;
   margin-left: 55px;
 }
 .register select {
- width : 180px;
+ width : 80px;
 }
 .register input[class="insure3"]
 {
@@ -807,6 +892,28 @@ label[for="age"] {
   
   margin-left: 120px;
 }
+label[for="al"] {
+  
+  margin-left: 180px;
+}
+label[for="k"] {
+  
+  margin-left: 182px;
+}
+label[for="pu"] {
+  
+  margin-left: 183px;
+}
+
+label[for="o"] {
+  
+  margin-left: 183px;
+}
+label[for="d"] {
+  
+  margin-left: 183px;
+}
+
 
 
 label[for="p"] {
@@ -866,18 +973,100 @@ label[for="p"] {
 
 
 
+.register select[name="hi"]{
+  height: 30px;
+  width: 75px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 37px;
+}
+.register input[name="w"]{
+  height: 30px;
+  width: 75px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 175px;
+}
 
-.register select[class = "insure3"]{
-  height: 49px;
-  width: 290px;
+.register input[name="age"]{
+  height: 30px;
+  width: 75px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 198px;
+}
+.register input[name="h"]{
+  height: 30px;
+  width: 75px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 179px;
+}
+
+.register select[name="D"]{
+  height: 30px;
+  width: 75px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 161px;
+}
+.register select[name="bp"]{
+  height: 30px;
+  width: 75px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 120px;
+}
+.register select[name="K"]{
+  height: 30px;
+  width: 75px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 119px;
+}
+.register select[name="At"]{
+  height: 30px;
+  width: 75px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 113px;
+}
+.register select[name="C"]{
+  height: 30px;
+  width: 75px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 80px;
+}
+
+.register select[name="smoker"]{
+  height: 30px;
+  width: 75px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 175px;
+}
+
+.register select[name="No"]{
+  height: 30px;
+  width: 75px;
+  border-radius: 10px;
+  border: solid 0.5px #141414;
+  margin-left: 31px;
+}
+
+
+/* .register select[class = "insure3"]{
+  height: 30px;
+  width: 75px;
   border-radius: 10px;
   border: solid 0.5px #141414;
   margin-left: 28px;
-}
+} */
 .register input[class="insure2"]
 {
-  height: 49px;
-  width: 290px;
+  height: 30px;
+  width: 75px;
   border-radius: 10px;
   border: solid 0.5px #141414;
   margin-left: 55px;
@@ -885,8 +1074,8 @@ label[for="p"] {
 
 .register input[class="insure1"]
 {
-  height: 49px;
-  width: 290px;
+  height: 30px;
+  width: 75px;
   border-radius: 10px;
   border: solid 0.5px #141414;
   margin-left: 20px;
@@ -894,9 +1083,9 @@ label[for="p"] {
 
 .register input[type="reset"]
 {
-  width: 150px;
-  height: 49px;
-  margin-left: 30px;
+  width: 90px;
+  height: 35px;
+  margin-left: 120px;
   color: #10de9f;
   border-radius: 10px;
   border: 3px solid #10de9f;
