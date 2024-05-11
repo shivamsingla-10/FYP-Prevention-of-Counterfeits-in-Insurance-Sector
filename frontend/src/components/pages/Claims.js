@@ -4,7 +4,7 @@ import image from '../../img/Repeat_Grid_5.png';
 import image1 from '../../img/Icon_feather-check-circle.png';
 import image2 from '../../img/Icon_feather-clock.png';
 
-const Web3 = require('web3');
+const { Web3 } = require('web3');
 const web3 = new Web3('http://localhost:8545');
 
 function createDataset() {
@@ -25,6 +25,7 @@ function createDataset() {
       "Medication D": medD
   }];
   console.log(dataset);
+
 
   // Convert the dataset object to JSON string
   // const datasetJson = JSON.stringify(dataset);
@@ -423,7 +424,7 @@ const Claims = () => {
 
   );
 };
-// document.addEventListener('DOMContentLoaded', function() {
-//   // Add event listener to the submit button
-//   document.getElementById('submitButton').addEventListener('click', createDataset);});
+document.addEventListener('DOMContentLoaded', function() {
+  // Add event listener to the submit button
+  document.getElementById('submitButton').addEventListener('click', createDataset);});
 export default Claims;

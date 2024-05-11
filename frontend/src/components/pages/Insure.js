@@ -1,5 +1,5 @@
 import React from 'react';
-const Web3 = require('web3');
+const { Web3 } = require('web3');
 const web3 = new Web3('http://localhost:3000');
 
 function createDataset2() {
@@ -699,7 +699,7 @@ rf.fit(data, null, "charges", function(err, trees){
   var pred = rf.predict(dataset, trees);
   console.log(pred)
   alert("Transaction Successful");
-  const contractAddress = "0x05783f73B9bC025Cf610c456FA66FDDB3a6540a3"; // Replace with your smart contract address
+  const contractAddress = "0x482b937ad3F629dD3268C132C7240d86551e9568"; // Replace with your smart contract address
   const contractABI = [
     {
       "inputs": [
@@ -851,13 +851,14 @@ rf.fit(data, null, "charges", function(err, trees){
   const contractInstance = new web3.eth.Contract(contractABI, contractAddress);
 
   contractInstance.methods.addRecord(age,diabetes,bloodp,transplant,chronic,height,weight,allergy,cancer,surgery,pred[0])
-  .send({ from: 0x83bB92448BC104489547459B58aDD459D0De724C, gas: '3000000' })
+  .send({ from: 0x320B50f9c117a4890f493Fd7fa1dB57FFd9D40eC, gas: '3000000' })
   .then(receipt => {
     console.log('Transaction successful:', receipt);
   })
   .catch(error => {
     console.error('Failed to send transaction to smart contract:', error);
   });
+  pred[0]=100;
 data.unshift({'Age':age,'Diabetes':diabetes,'BloodPressureProblems':bloodp,'AnyTransplants':transplant,'AnyChronicDiseases':chronic,
 'Height':height,'Weight':weight,'KnownAllergies':allergy,'HistoryOfCancerInFamily':cancer,'NumberOfMajorSurgeries':surgery,'PremiumPrice':pred[0]})
 console.log(pred);
@@ -960,7 +961,7 @@ const Insure = () => {
   );
 };
 
-// document.addEventListener('DOMContentLoaded', function() {
-//   // Add event listener to the submit button
-//   document.getElementById('submitButton2').addEventListener('click', createDataset2);});
+document.addEventListener('DOMContentLoaded', function() {
+  // Add event listener to the submit button
+  document.getElementById('submitButton2').addEventListener('click', createDataset2);});
 export default Insure;
